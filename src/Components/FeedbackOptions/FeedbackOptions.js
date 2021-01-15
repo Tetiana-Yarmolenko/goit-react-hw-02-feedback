@@ -5,17 +5,19 @@ import s from './FeedbackOptions.module.css';
 const FeedbackButton = ({feedback, onLeaveFeedback}) => {
     return (
         <button
-            type="button" data-feedback={feedback} onClick ={onLeaveFeedback}>
-        </button> 
+            className={s.button}
+            type="button" data-feedback={feedback} onClick={onLeaveFeedback}>
+            {feedback}
+            </button> 
   )  
 }
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-    return options.map((option) => <FeedbackButton feedback={options} onLeaveFeedback={onLeaveFeedback}  />)
-    
+    // return options.map((option) => <FeedbackButton feedback={option} onLeaveFeedback={onLeaveFeedback}  />)
+    return (<div className={s.feedback}>{options.map((option) => FeedbackButton({ feedback: option, onLeaveFeedback }))}</div>)
 }
-FeedbackOptions.PropTypes = {
+FeedbackOptions.propTypes = {
     options: PropTypes.arrayOf(PropTypes.string),
-    onLeaveFeedback: PropTypes.func.isRequired
+    onLeaveFeedback: PropTypes.func.isRequired,
 }
 
 export default FeedbackOptions;
