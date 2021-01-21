@@ -14,8 +14,7 @@ const Statistics = ({good, neutral, bad, total, positivePercentage}) => {
         <li className={s.list}>Positive feedback: {positivePercentage}%</li>
       </ul>)}
     {total === 0 && <Notification message="No feedback given"/>}
-    </>
-         
+    </>   
     )
 }
 
