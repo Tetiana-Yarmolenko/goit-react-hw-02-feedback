@@ -4,7 +4,7 @@ import './App.css';
 import Section from "./Components/Section/Section"
 import FeedbackOptions from "./Components/FeedbackOptions/FeedbackOptions"
 import Statistics from './Components/Statistics'
-import Notification from './Components/Notification/Notification'
+
 import {FEEDBACK_OPTIONS} from "./data/constans"
 
 class App extends Component {
@@ -40,14 +40,12 @@ class App extends Component {
         <FeedbackOptions options={FEEDBACK_OPTIONS} onLeaveFeedback={this.handleFeedback} />
       </Section>
       <Section title="Statistics">
-        {total !== 0 ? (
           <Statistics good={good}
             neutral={neutral}
             bad={bad}
             total={total}
             positivePercentage={positiveFeedbackPercentage}
           />
-        ) : (<Notification message="No feedback given" />) }
       </Section>
     </div>
   }
