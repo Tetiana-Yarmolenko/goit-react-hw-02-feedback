@@ -1,18 +1,18 @@
 import { Component } from "react";
 import './App.css';
 
-import Section from "./Components/Section/Section"
-import FeedbackOptions from "./Components/FeedbackOptions/FeedbackOptions"
-import Statistics from './Components/Statistics'
+import Section from "./Section/Section"
+import FeedbackOptions from "./FeedbackOptions/FeedbackOptions"
+import Statistics from './Statistics'
 
-import {FEEDBACK_OPTIONS} from "./data/constans"
+import {FEEDBACK_OPTIONS} from "../data/constans"
 
 class App extends Component {
+  
   state = {
   good: 0,
   neutral: 0,
-  bad: 0
-  }
+  bad: 0}
   
   handleFeedback = ({ target }) => {
     const { feedback } = target.dataset
@@ -44,8 +44,7 @@ class App extends Component {
             neutral={neutral}
             bad={bad}
             total={total}
-            positivePercentage={positiveFeedbackPercentage}
-          />
+            positivePercentage={positiveFeedbackPercentage}/>
       </Section>
     </div>
   }

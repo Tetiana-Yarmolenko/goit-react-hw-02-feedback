@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import s from './Statistics.module.css';
 import Notification from '../Notification/Notification'
 
@@ -25,4 +26,5 @@ Statistics.propTypes = {
   total: PropTypes.number.isRequired,
   positivePercentage: PropTypes.number.isRequired,
 };
+
 export default Statistics;

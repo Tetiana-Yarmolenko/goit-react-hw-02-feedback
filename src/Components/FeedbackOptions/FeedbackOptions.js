@@ -8,13 +8,14 @@ const FeedbackButton = ({feedback, onLeaveFeedback}) => {
             className={s.button}
             type="button" data-feedback={feedback} onClick={onLeaveFeedback}>
             {feedback}
-            </button> 
-  )  
+        </button>)
 }
+
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     // return options.map((option) => <FeedbackButton feedback={option} onLeaveFeedback={onLeaveFeedback}  />)
     return (<div className={s.feedback}>{options.map((option) => FeedbackButton({ feedback: option, onLeaveFeedback }))}</div>)
 }
+
 FeedbackOptions.propTypes = {
     options: PropTypes.arrayOf(PropTypes.string),
     onLeaveFeedback: PropTypes.func.isRequired,
